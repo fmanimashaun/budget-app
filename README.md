@@ -26,7 +26,7 @@
 
 ## 📖 Budget App <a name="about-project"></a>
 
-The **Budget app** is a comprehensive solution for managing recipes, ingredients, and inventory, designed using Ruby on Rails with a PostgreSQL database. This fully functional application allows users to save ingredients, keep track of their inventory, create recipes, and generate shopping lists based on what they have and what they are missing from a recipe. An important feature of the app is its ability to make recipes public, enabling anyone to access them. This promotes the sharing of recipes, which is a vital part of cooking. The Recipe app is not just an application, but a cooking companion that enhances the cooking experience by organizing and simplifying the process.
+The **Budget App** is a comprehensive solution for managing personal finances, designed using Ruby on Rails with a PostgreSQL database. This fully functional application allows users to create categories, track transactions, and get an overview of their spending. An important feature of the app is its ability to associate transactions with categories, enabling users to understand their spending habits better. This promotes responsible financial management, which is a vital part of personal finance. The Budget App is not just an application, but a financial companion that enhances the budgeting experience by organizing and simplifying the process
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -64,16 +64,14 @@ The **Budget app** is a comprehensive solution for managing recipes, ingredients
 
 ### Key Feature <a name="key-features"></a>
 
-- [x] Rails Setup
-- [x] Data Model Setup
-- [x] Models Created for Recipes, Ingredients, and Inventory
-- [x] Class Association Implemented among Recipes, Ingredients, and Inventory
-- [x] Custom Methods Implemented to Fetch and Manipulate Data
-- [x] Models Data Validation Implemented for Recipe Creation and Ingredient Addition
-- [x] Models Unit Testing Applied
-- [x] Feature to Generate Shopping List Based on Inventory and Recipe Requirements
-- [x] Feature to Make Recipes Public for Sharing
-- [x] PostgreSQL Database Integration
+- [x] **User Authentication:** Users can securely register and log in to the app using their email and password.
+- [x] **Category Management:** Users can create and manage categories, each with a unique name and icon.
+- [x] **Transaction Tracking:** Users can add transactions under each category, with details like name and amount.
+- [x] **Budget Overview:** On the home page, users can see an overview of all categories along with the total amount of transactions under each category.
+- [x] **Detailed Transaction View:** Users can view all transactions under a specific category, sorted by the most recent.
+- [x] **Easy Navigation:** Users can easily navigate between different pages like home, transactions, add new category, and add new transaction.
+- [x] **Test Coverage:** The app includes unit and integration tests to ensure it works as expected.
+- [x] **Deployment:** The app is deployed and accessible online for users to use it anywhere, anytime.
 
 <p align="right"><a href="#readme-top">👆</a></p>
 
@@ -160,7 +158,8 @@ bin/dev
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- implement database
+- [ ] **Responsive Design:** The app will designed to be responsive and works well on various devices and screen sizes.
+- [ ] **Customizable Interface:** Users will be able to customize the interface with their preferred color scheme and font
 
 <p align="right"><a href="#readme-top">👆</a></p>
 
