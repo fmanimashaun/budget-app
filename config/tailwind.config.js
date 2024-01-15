@@ -11,6 +11,8 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+        'light': ['Proxima Nova Light', ...defaultTheme.fontFamily.sans],
+        'bold': ['Proxima Nova Bold', ...defaultTheme.fontFamily.sans],
       },
     },
   },
