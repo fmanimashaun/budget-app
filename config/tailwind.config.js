@@ -14,6 +14,16 @@ module.exports = {
         'light': ['Proxima Nova Light', ...defaultTheme.fontFamily.sans],
         'bold': ['Proxima Nova Bold', ...defaultTheme.fontFamily.sans],
       },
+      colors: {
+        'primary': '#3778c2',
+        'secondary': '#5fb523',
+        'accent': {
+          '100': '#989da3',
+          '200': '#86898e',
+          '300': '#545c67',
+          '400': '#434b54',
+        },
+      },
     },
   },
   plugins: [
