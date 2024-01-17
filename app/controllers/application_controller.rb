@@ -12,8 +12,6 @@ class ApplicationController < ActionController::Base
   private
 
   def redirect_if_signed_in
-    return unless user_signed_in? && current_page?(root_path)
-
-    redirect_to categories_path
+    redirect_to categories_path if user_signed_in? && request.path == root_path
   end
 end
