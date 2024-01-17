@@ -1,24 +1,42 @@
-<div class="w-full flex flex-col">
+<div class="w-full flex flex-col bg-off-white session">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <header class="bg-primary flex justify-between p-2 mb-5">
+      <%= link_to 'javascript:history.back()', class: "text-white" do %>
+        <%= image_tag 'back-arrow.svg', alt: 'back arrow' %>
+      <% end %>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <header class="bg-primary flex justify-between">
-    <%= link_to 'Back', :back, class: "back-button" %>
-    <h2>LOGIN</h2>
-    <div class="actions">
-      <%= f.submit "Log in" %>
+      <h2 class="text-white">LOGIN</h2>
+      <div class="actions">
+        <%= f.submit 'Log in', class: 'text-white cursor-pointer' %>
+      </div>
+    </header>
+
+    <div class="field mb-1 px-1 rounded-md">
+      <%= f.label :email, class: 'hidden' %>
+      <%=
+        f.email_field :email,
+                      autofocus: true,
+                      autocomplete: 'email',
+                      placeholder: 'Email',
+                      class: 'block w-full border-0 focus:ring-1 focus:ring-primary'
+      %>
     </div>
-  </header>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <div class="field px-1 rounded-md">
+      <%= f.label :password, class: 'hidden' %>
+      <%=
+        f.password_field :password,
+                         autocomplete: 'current-password',
+                         placeholder: 'Password',
+                         class:
+                           'block w-full border-0 focus:ring-1 focus:ring-primary'
+      %>
+    </div>
+  <% end %>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-<% end %>
-
-<%= link_to "Forgot your password?", new_user_password_path %>
+  <%=
+    link_to 'Forgot password?',
+            new_user_password_path,
+            class: 'block text-center py-5 text-accent-100'
+  %>
 </div>

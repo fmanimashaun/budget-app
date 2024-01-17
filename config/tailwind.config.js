@@ -29,8 +29,11 @@ module.exports = {
           '300': '#545c67',
           '400': '#434b54',
         },
+        'off-white': '#f5f6f8',
       },
     },
+  },
+  variants: {
   },
   plugins: [
     require('@tailwindcss/forms'),

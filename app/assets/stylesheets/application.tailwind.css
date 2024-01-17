@@ -11,3 +11,8 @@
   font-family: 'Proxima Nova Bold';
   src: url('../fonts/ProximaBold.otf') format('opentype');
 }
+
+.session input::placeholder {
+  @apply bg-white;
+  @apply text-accent-100;
+}
