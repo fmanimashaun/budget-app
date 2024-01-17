@@ -1,22 +1,9 @@
-<div>
-  <h1 class="font-bold text-4xl">Home#index</h1>
-  <p>Find me in app/views/home/index.html.erb</p>
-
-  <div class="font-light">This is some text in Proxima Nova Light.</div>
-  <div class="font-bold">This is some text in Proxima Nova Bold.</div>
-
-  <div class="text-primary">This is some text in the primary color.</div>
-  <div class="text-secondary">This is some text in the secondary color.</div>
-  <div class="text-accent-100">
-    This is some text in the lightest accent color.
+<div class="w-full flex flex-col justify-center">
+  <div class="my-auto">
+    <%= image_tag 'logo.png', alt: 'logo', class: "block w-[200px] h-auto mx-auto" %>
   </div>
-  <div class="text-accent-200">
-    This is some text in the second lightest accent color.
+  <div class="flex flex-col mt-auto justify-between w-full">
+    <%= link_to "SIGN IN",  new_user_session_path, class: 'w-full text-center no-underline font-bold bg-primary text-white m-0 p-2 rounded cursor-pointer' %>
+    <%= link_to "SIGN UP",   new_user_registration_path, class: 'w-full text-center font-bold text-accent-100 no-underline m-0 p-2 rounded cursor-pointer border border-primary' %>
   </div>
-  <div class="text-accent-300">
-    This is some text in the second darkest accent color.
-  </div>
-  <div class="text-accent-400">
-    This is some text in the darkest accent color.
-  </div>
-</div>
+</>

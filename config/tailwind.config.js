@@ -9,6 +9,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      minHeight: {
+        'screen': '100vh',
+      },
+      maxWidth: {
+        'full': '100vw',
+      },
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
         'light': ['Proxima Nova Light', ...defaultTheme.fontFamily.sans],
