@@ -77,7 +77,7 @@ The **Budget App - Budgetti** is a comprehensive solution for managing personal 
 
 ### Screenshots <a name="key-features"></a>
 
-<img src="#" alt="public index without login" width="500"/>
+<img src="screenshots/splash-screen.png" alt="public index without login" width="500"/>
 
 
 <p align="right"><a href="#readme-top">👆</a></p>
