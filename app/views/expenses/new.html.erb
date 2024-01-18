@@ -1,0 +1,36 @@
+<div class="w-full flex flex-col bg-off-white session">
+  <%= form_with model: @expense, method: :post do |f| %>
+    <header class="bg-primary flex justify-between p-2 mb-5">
+      <%= link_to 'javascript:history.back()', class: "text-white" do %>
+        <%= image_tag 'back-arrow.svg', alt: 'back arrow' %>
+      <% end %>
+      <h2 class="text-white">ADD TRANSACTION</h2>
+      <div class="actions">
+        <%= f.submit 'Add', class: 'text-white cursor-pointer' %>
+      </div>
+    </header>
+
+    <div class="field mb-1 px-1 rounded-md">
+      <%= f.label :name, class: 'hidden' %>
+      <%=
+        f.text_field :name,
+                     autofocus: true,
+                     placeholder: 'Category name',
+                     class:
+                       'block w-full border-0 focus:ring-1 focus:ring-primary'
+      %>
+    </div>
+
+    <div class="field mb-1 px-1 rounded-md">
+      <%= f.label :amount, class: 'hidden' %>
+      <%=
+        f.number_field :anount,
+                       placeholder: 'Amount',
+                       class:
+                         'block w-full border-0 focus:ring-1 focus:ring-primary',
+                       min: 0,
+                       step: 'any'
+      %>
+    </div>
+  <% end %>
+</div>
