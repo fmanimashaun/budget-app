@@ -6,6 +6,7 @@ class CategoriesController < ApplicationController
     @categories = Category.where(user: current_user)
     # @categories = @categories.where('name LIKE ?', "%#{params[:search]}%") if params[:search].present?
     # @categories = @categories.order(:name)
+    @total_spent = @categories.sum { |category| category.expenses.sum(:amount) }
   end
 
   def new
