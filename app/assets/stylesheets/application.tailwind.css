@@ -4,15 +4,29 @@
 
 @font-face {
   font-family: 'Proxima Nova Light';
-  src: url('../fonts/ProximaLight.otf') format('opentype');
+  src: url('ProximaLight.otf') format('opentype');
 }
 
 @font-face {
   font-family: 'Proxima Nova Bold';
-  src: url('../fonts/ProximaBold.otf') format('opentype');
+  src: url('ProximaBold.otf') format('opentype');
 }
 
 .session input::placeholder {
   @apply bg-white;
   @apply text-accent-100;
+}
+
+#content {
+  transition: transform 0.3s ease-out, margin-block 0.3s ease-out;
+}
+
+.off-canvas {
+  position: relative;
+  transform: translateX(300px);
+  margin-block: 50px;
+}
+
+.close {
+  left: -300px;
 }

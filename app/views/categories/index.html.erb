@@ -1,4 +1,27 @@
-<div>
-  <h1 class="font-bold text-4xl">Categories#index</h1>
-  <p>Find me in app/views/categories/index.html.erb</p>
+<div class="relative w-full flex bg-gradient-to-tr from-primary to-dark-blue">
+  <%= render 'layouts/nav' %>
+
+  <div class="w-full flex flex-col bg-off-white relative" id="content">
+    <header class="bg-primary flex justify-between p-2">
+      <button id="menu-btn">
+        <%= image_tag 'menu.svg', alt: 'back arrow' %>
+      </button>
+      <h2 class="text-white">CATEGORY</h2>
+      <%= link_to 'javascript:history.back()', class: "text-white" do %>
+        <%= image_tag 'search.svg', alt: 'back arrow' %>
+      <% end %>
+    </header>
+
+    <div>
+    </div>
+
+    <div class="mt-auto bg-secondary p-2">
+      <%=
+        link_to 'ADD CATEGORY',
+                new_category_path,
+                class:
+                  'block w-full text-center no-underline font-bold bg-transparent text-white border border-white p-2 rounded cursor-pointer'
+      %>
+    </div>
+  </div>
 </div>
