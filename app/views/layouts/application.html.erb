@@ -14,12 +14,16 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="relative w-full max-w-[500px] min-h-screen mx-auto flex flex-col p-5">
-    <div class="absolute">
+  <body
+    class="relative w-full max-w-[400px] h-screen mx-auto flex flex-col font-light"
+  >
+    <div id="toast" class="toast absolute hidden">
       <p class="notice text-center"><%= notice %></p>
       <p class="alert text-center"><%= alert %></p>
     </div>
-    <main class="container mx-auto flex flex-grow">
+    <main
+      class="container mx-auto flex flex-grow overflow-x-hidden bg-off-white"
+    >
       <%= yield %>
     </main>
   </body>

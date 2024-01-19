@@ -1,26 +1,51 @@
-<h2>Log in</h2>
+<div class="hidden">
+  <%= render 'layouts/nav' %>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+  <header class="bg-primary flex justify-between p-2 mb-5">
+    <button class="hidden" id="menu-btn">
+      <%= image_tag 'menu.svg', alt: 'back arrow' %>
+    </button>
+  </header>
+</div>
+<div class="w-full flex flex-col bg-off-white session">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <header class="bg-primary flex justify-between p-2 mb-5">
+      <%= link_to 'javascript:history.back()', class: "text-white" do %>
+        <%= image_tag 'back-arrow.svg', alt: 'back arrow' %>
+      <% end %>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+      <h2 class="text-white">LOGIN</h2>
+      <div class="actions">
+        <%= f.submit 'Log in', class: 'text-white cursor-pointer' %>
+      </div>
+    </header>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+    <div class="field mb-1 px-1 rounded-md">
+      <%= f.label :email, class: 'hidden' %>
+      <%=
+        f.email_field :email,
+                      autofocus: true,
+                      autocomplete: 'email',
+                      placeholder: 'Email',
+                      class: 'block w-full border-0 focus:ring-1 focus:ring-primary'
+      %>
+    </div>
+
+    <div class="field px-1 rounded-md">
+      <%= f.label :password, class: 'hidden' %>
+      <%=
+        f.password_field :password,
+                         autocomplete: 'current-password',
+                         placeholder: 'Password',
+                         class:
+                           'block w-full border-0 focus:ring-1 focus:ring-primary'
+      %>
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+  <%=
+    link_to 'Forgot password?',
+            new_user_password_path,
+            class: 'block text-center py-5 text-accent-100'
+  %>
+</div>

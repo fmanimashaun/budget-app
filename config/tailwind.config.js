@@ -9,6 +9,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      width: {
+        '100': '100%',
+      },
+      spacing: {
+        '70': '70px',
+      },
       minHeight: {
         'screen': '100vh',
       },
@@ -23,14 +29,18 @@ module.exports = {
       colors: {
         'primary': '#3778c2',
         'secondary': '#5fb523',
+        'dark-blue': '#13325e',
         'accent': {
           '100': '#989da3',
           '200': '#86898e',
           '300': '#545c67',
           '400': '#434b54',
         },
+        'off-white': '#f5f6f8',
       },
     },
+  },
+  variants: {
   },
   plugins: [
     require('@tailwindcss/forms'),

@@ -1,9 +1,30 @@
-<div class="w-full flex flex-col justify-center">
+<div class="hidden">
+  <%= render 'layouts/nav' %>
+
+  <header class="bg-primary flex justify-between p-2 mb-5">
+    <button class="hidden" id="menu-btn">
+      <%= image_tag 'menu.svg', alt: 'back arrow' %>
+    </button>
+  </header>
+</div>
+<div class="w-full flex flex-col justify-center p-5">
   <div class="my-auto">
-    <%= image_tag 'logo.png', alt: 'logo', class: "block w-[200px] h-auto mx-auto" %>
+    <%=
+      image_tag 'logo.png', alt: 'logo', class: 'block w-[200px] h-auto mx-auto'
+    %>
   </div>
   <div class="flex flex-col mt-auto justify-between w-full">
-    <%= link_to "SIGN IN",  new_user_session_path, class: 'w-full text-center no-underline font-bold bg-primary text-white m-0 p-2 rounded cursor-pointer' %>
-    <%= link_to "SIGN UP",   new_user_registration_path, class: 'w-full text-center font-bold text-accent-100 no-underline m-0 p-2 rounded cursor-pointer border border-primary' %>
+    <%=
+      link_to 'SIGN IN',
+              new_user_session_path,
+              class:
+                'w-full text-center no-underline font-bold bg-primary text-white m-0 p-2 rounded cursor-pointer'
+    %>
+    <%=
+      link_to 'SIGN UP',
+              new_user_registration_path,
+              class:
+                'w-full text-center font-bold text-accent-100 no-underline m-0 p-2 rounded cursor-pointer border border-primary'
+    %>
   </div>
-</>
+</div>
