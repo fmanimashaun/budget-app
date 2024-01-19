@@ -1,65 +1,29 @@
-<div class="hidden">
-  <%= render 'layouts/nav' %>
+<h2>Sign up</h2>
 
-  <header class="bg-primary flex justify-between p-2 mb-5">
-    <button class="hidden" id="menu-btn">
-      <%= image_tag 'menu.svg', alt: 'back arrow' %>
-    </button>
-  </header>
-</div>
-<div class="w-full flex flex-col bg-off-white session">
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <header class="bg-primary flex justify-between p-2 mb-5">
-      <%= link_to 'javascript:history.back()', class: "text-white" do %>
-        <%= image_tag 'back-arrow.svg', alt: 'back arrow' %>
-      <% end %>
-      <h2 class="text-white">REGISTER</h2>
-      <div class="actions">
-        <%= f.submit 'Next', class: 'text-white cursor-pointer' %>
-      </div>
-    </header>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
 
-    <%= render 'devise/shared/error_messages', resource: resource %>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
 
-    <div class="field mb-1 px-1 rounded-md">
-      <%= f.label :name, class: 'hidden' %>
-      <%=
-        f.text_field :name,
-                     autofocus: true,
-                     placeholder: 'Full name',
-                     class:
-                       'block w-full border-0 focus:ring-1 focus:ring-primary'
-      %>
-    </div>
-    <div class="field mb-1 px-1 rounded-md ">
-      <%= f.label :email, class: 'hidden' %>
-      <%=
-        f.email_field :email,
-                      autocomplete: 'email',
-                      placeholder: 'Email',
-                      class:
-                        'block w-full border-0 focus:ring-1 focus:ring-primary'
-      %>
-    </div>
-    <div class="field mb-1 px-1 rounded-md ">
-      <%= f.label :password, class: 'hidden' %>
-      <%=
-        f.password_field :password,
-                         autocomplete: 'new-password',
-                         placeholder: "Password#{' (' + @minimum_password_length.to_s + ' characters minimum)' if @minimum_password_length}",
-                         class:
-                           'block w-full border-0 focus:ring-1 focus:ring-primary'
-      %>
-    </div>
-    <div class="field px-1 rounded-md">
-      <%= f.label :password_confirmation, class: 'hidden' %>
-      <%=
-        f.password_field :password_confirmation,
-                         autocomplete: 'new-password',
-                         placeholder: 'Password Confirmation',
-                         class:
-                           'block w-full border-0 focus:ring-1 focus:ring-primary'
-      %>
-    </div>
-  <% end %>
-</div>
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>

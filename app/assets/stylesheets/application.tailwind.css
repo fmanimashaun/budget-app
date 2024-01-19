@@ -4,42 +4,10 @@
 
 @font-face {
   font-family: 'Proxima Nova Light';
-  src: url('ProximaLight.otf') format('opentype');
+  src: url('../fonts/ProximaLight.otf') format('opentype');
 }
 
 @font-face {
   font-family: 'Proxima Nova Bold';
-  src: url('ProximaBold.otf') format('opentype');
-}
-
-.session input::placeholder {
-  @apply bg-white;
-  @apply text-accent-100;
-}
-
-#content {
-  transition: transform 0.3s ease-out, margin-block 0.3s ease-out;
-}
-
-.off-canvas {
-  position: relative;
-  transform: translateX(300px);
-  margin-block: 50px;
-}
-
-.close {
-  left: -300px;
-}
-
-.toast {
-  background-color: #333;
-  color: white;
-  padding: 16px;
-  position: fixed;
-  z-index: 1;
-  left: 50%;
-  bottom: 120px;
-  font-size: 17px;
-  transform: translate(-50%, 0);
-  border-radius: 10px;
+  src: url('../fonts/ProximaBold.otf') format('opentype');
 }
