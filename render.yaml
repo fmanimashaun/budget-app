@@ -1,6 +1,6 @@
 databases:
-  - name: Budgetti_database
-    databaseName: Budgetti_database
+  - name: budgetti_database
+    databaseName: budgetti_database
     user: budgetti_user
     plan: free
 
@@ -15,7 +15,7 @@ services:
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: Budgetti_database
+          name: budgetti_database
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
