@@ -1,6 +1,6 @@
 databases:
   - name: Budgetti_database
-    databaseName: Budgetti_database
+    databaseName: Budgetti
     user: budgetti_user
     plan: free
 
