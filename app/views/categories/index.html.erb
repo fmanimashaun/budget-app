@@ -1,5 +1,5 @@
 <div class="relative w-full flex bg-gradient-to-tr from-primary to-dark-blue">
-  <%= render 'layouts/nav' %>
+ <%= render 'layouts/nav' %> 
 
   <div class="w-full flex flex-col bg-off-white relative" id="content">
     <header class="bg-primary flex justify-between p-2">
@@ -7,8 +7,8 @@
         <%= image_tag 'menu.svg', alt: 'back arrow' %>
       </button>
       <h2 class="text-white">CATEGORIES</h2>
-      <%= link_to 'javascript:history.back()', class: "text-white" do %>
-        <%= image_tag 'search.svg', alt: 'back arrow' %>
+      <%= link_to '#', class: "text-white" do %>
+        <%= image_tag 'search.svg', alt: 'search icon' %>
       <% end %>
     </header>
 

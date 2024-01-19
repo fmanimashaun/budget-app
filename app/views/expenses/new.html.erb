@@ -1,6 +1,12 @@
 <div class="w-full flex flex-col bg-off-white session">
+  <div class="hidden">
+    <%= render 'layouts/nav' %>
+  </div>
   <%= form_with model: @expense, url: category_expenses_path, method: :post do |f| %>
     <header class="bg-primary flex justify-between p-2 mb-5">
+      <button class="hidden" id="menu-btn">
+        <%= image_tag 'menu.svg', alt: 'back arrow' %>
+      </button>
       <%= link_to 'javascript:history.back()', class: "text-white" do %>
         <%= image_tag 'back-arrow.svg', alt: 'back arrow' %>
       <% end %>
@@ -40,7 +46,12 @@
                             :id,
                             :name,
                             { include_blank: 'Select at least one category' },
-                            { multiple: true, size: 5, class: 'block w-full border-0 focus:ring-1 focus:ring-primary text-accent-100' }
+                            {
+                              multiple: true,
+                              size: 5,
+                              class:
+                                'block w-full border-0 focus:ring-1 focus:ring-primary text-accent-100',
+                            }
       %>
     </div>
   <% end %>
