@@ -41,10 +41,8 @@ RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
 
   # Devise
-  config.include Devise::Test::ControllerHelpers, type: :controller
-  config.include Devise::Test::ControllerHelpers, type: :view
-  config.include Devise::Test::ControllerHelpers, type: :feature
-  config.include Devise::Test::ControllerHelpers, type: :request
+  config.include Devise::Test::IntegrationHelpers, type: :request
+  config.include Devise::Test::IntegrationHelpers, type: :view
   config.include Devise::Test::IntegrationHelpers, type: :system
 
   # RSpec Rails

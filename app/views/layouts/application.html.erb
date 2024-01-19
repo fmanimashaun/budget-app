@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BudgetApp</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Budgetti</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%=
+      stylesheet_link_tag 'tailwind', 'inter-font', 'data-turbo-track': 'reload'
+    %>
+    <%= favicon_link_tag asset_path('favicon.ico') %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag 'application', 'data-turbo-track': 'reload' %>
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+  <body
+    class="relative w-full max-w-[400px] h-screen mx-auto flex flex-col font-light"
+  >
+    <div id="toast" class="toast absolute hidden">
+      <p class="notice text-center"><%= notice %></p>
+      <p class="alert text-center"><%= alert %></p>
+    </div>
+    <main
+      class="container mx-auto flex flex-grow overflow-x-hidden bg-off-white"
+    >
+      <%= yield %>
+    </main>
   </body>
 </html>

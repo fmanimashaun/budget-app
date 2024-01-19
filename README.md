@@ -1,4 +1,4 @@
-# Budget App
+# Budget App - Budgetti
 
 <a name="readme-top"></a>
 
@@ -24,9 +24,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-## 📖 Budget App <a name="about-project"></a>
+## 📖 Budget App - Budgetti <a name="about-project"></a>
 
-The **Budget App** is a comprehensive solution for managing personal finances, designed using Ruby on Rails with a PostgreSQL database. This fully functional application allows users to create categories, track transactions, and get an overview of their spending. An important feature of the app is its ability to associate transactions with categories, enabling users to understand their spending habits better. This promotes responsible financial management, which is a vital part of personal finance. The Budget App is not just an application, but a financial companion that enhances the budgeting experience by organizing and simplifying the process
+The **Budget App - Budgetti** is a comprehensive solution for managing personal finances, designed using Ruby on Rails with a PostgreSQL database. This fully functional application allows users to create categories, track transactions, and get an overview of their spending. An important feature of the app is its ability to associate transactions with categories, enabling users to understand their spending habits better. This promotes responsible financial management, which is a vital part of personal finance. The Budget App is not just an application, but a financial companion that enhances the budgeting experience by organizing and simplifying the process
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -77,7 +77,7 @@ The **Budget App** is a comprehensive solution for managing personal finances, d
 
 ### Screenshots <a name="key-features"></a>
 
-<img src="#" alt="public index without login" width="500"/>
+<img src="screenshots/splash-screen.png" alt="public index without login" width="500"/>
 
 
 <p align="right"><a href="#readme-top">👆</a></p>
