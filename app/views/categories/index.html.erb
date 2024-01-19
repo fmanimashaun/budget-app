@@ -1,5 +1,5 @@
 <div class="relative w-full flex bg-gradient-to-tr from-primary to-dark-blue">
- <%= render 'layouts/nav' %> 
+  <%= render 'layouts/nav' %>
 
   <div class="w-full flex flex-col bg-off-white relative" id="content">
     <header class="bg-primary flex justify-between p-2">
@@ -13,30 +13,34 @@
     </header>
 
     <div class="flex flex-col px-5 py-5 gap-2 flex-grow overflow-y-auto">
-      <% @categories.each do |category| %>
-        <div class="w-full">
-          <%= link_to category_expenses_path(category) do %>
-            <div
-              class="flex gap-2 items-center bg-white rounded-lg shadow-lg p-2"
-            >
-              <%=
-                image_tag category.icon,
-                          alt: 'category image',
-                          class: 'w-16 h-16'
-              %>
-              <div class="flex-grow">
-                <p
-                  class="flex justify-between font-bold text-sm text-accent-100"
-                >
-                  <span><%= category.name %></span>
-                  <span><%=
-                      number_to_currency(category.expenses.sum(:amount))
-                    %></span>
-                </p>
+      <% if @categories.empty? %>
+        <p>There are no categories yet.</p>
+      <% else %>
+        <% @categories.each do |category| %>
+          <div class="w-full">
+            <%= link_to category_expenses_path(category) do %>
+              <div
+                class="flex gap-2 items-center bg-white rounded-lg shadow-lg p-2"
+              >
+                <%=
+                  image_tag category.icon,
+                            alt: 'category image',
+                            class: 'w-16 h-16'
+                %>
+                <div class="flex-grow">
+                  <p
+                    class="flex justify-between font-bold text-sm text-accent-100"
+                  >
+                    <span><%= category.name %></span>
+                    <span><%=
+                        number_to_currency(category.expenses.sum(:amount))
+                      %></span>
+                  </p>
+                </div>
               </div>
-            </div>
-          <% end %>
-        </div>
+            <% end %>
+          </div>
+        <% end %>
       <% end %>
     </div>
 
