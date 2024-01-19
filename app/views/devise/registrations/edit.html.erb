@@ -1,3 +1,12 @@
+<div class="hidden">
+  <%= render 'layouts/nav' %>
+
+  <header class="bg-primary flex justify-between p-2 mb-5">
+    <button class="hidden" id="menu-btn">
+      <%= image_tag 'menu.svg', alt: 'back arrow' %>
+    </button>
+  </header>
+</div>
 <div class="w-full flex flex-col bg-off-white session">
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <header class="bg-primary flex justify-between p-2 mb-5">

@@ -11,7 +11,11 @@
                   avatar_path: asset_path('placeholder.png'),
                 }
     %>
-    <h3 class="text-white"><%= current_user.name %></h3>
+    <% if user_signed_in? %>
+      <h3 class="text-white"><%= current_user.name %></h3>
+    <% else %>
+      <h3 class="text-white">Guest</h3>
+    <% end %>
   </div>
 
   <nav>
@@ -58,38 +62,20 @@
       </li>
     </ul>
   </nav>
-  <div class="mt-auto">
-     <% if user_signed_in? %>
-      <%=
-        button_to(
-          'Sign Out',
-          destroy_user_session_path,
-          method: :delete,
-          class:
-              'text-center no-underline w-full m-0 border border-black shadow-black p-2 rounded hover:shadow-none cursor-pointer'
-        )
-      %>
-    <% else %>
-      <% unless current_page?(new_user_session_path) or current_page?(new_user_registration_path) %>
-        <div class="flex gap-5">
-      <%=
-        button_to(
-          'Sign in',
-          new_user_session_path,
-          method: :get,
-          class: 'text-center no-underline w-full m-0 border border-black shadow-black p-2 rounded hover:shadow-none cursor-pointer'
-        )
-      %>
-      <%=
-        button_to(
-          'Sign up',
-          new_user_registration_path,
-          method: :get,
-          class: 'text-center no-underline w-full m-0 border border-black shadow-black p-2 rounded hover:shadow-none cursor-pointer'
-        )
-      %>
-      </div>
-    <% end %>
-    <% end %>
+  <div class=" flex gap-5 mt-auto">
+    <%=
+      image_tag 'login.svg',
+                alt: 'icons',
+                class:
+                  'block w-[24px] h-[24px] p-0.5 border border-white rounded-full'
+    %>
+    <%=
+      button_to(
+        'Sign Out',
+        destroy_user_session_path,
+        method: :delete,
+        class: 'text-center cursor-pointer text-white',
+      )
+    %>
   </div>
 </header>

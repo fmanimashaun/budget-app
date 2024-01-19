@@ -33,9 +33,6 @@
                       number_to_currency(category.expenses.sum(:amount))
                     %></span>
                 </p>
-                <p class="text-sm text-accent-100 mt-3">
-                  <%= category.updated_at.strftime('%d %b %Y') %>
-                </p>
               </div>
             </div>
           <% end %>
