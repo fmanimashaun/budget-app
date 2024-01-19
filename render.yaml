@@ -9,7 +9,7 @@ services:
     name: budget_app
     runtime: ruby
     plan: free
-    buildCommand: "./bin/render-build.sh"
+    buildCommand: "bundle install; bundle exec rake assets:precompile; bundle exec rake assets:clean;"
     # preDeployCommand: "./bin/rails db:migrate" # preDeployCommand only available on paid instance types
     startCommand: "./bin/dev"
     envVars:
