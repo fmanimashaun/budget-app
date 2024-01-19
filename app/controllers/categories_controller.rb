@@ -1,11 +1,8 @@
 class CategoriesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_category, only: %i[show edit update destroy]
 
   def index
     @categories = Category.where(user: current_user)
-    # @categories = @categories.where('name LIKE ?', "%#{params[:search]}%") if params[:search].present?
-    # @categories = @categories.order(:name)
     @total_spent = @categories.sum { |category| category.expenses.sum(:amount) }
   end
 
@@ -23,24 +20,7 @@ class CategoriesController < ApplicationController
     end
   end
 
-  def edit
-  end
-
-  def update
-  end
-
-  def show
-  end
-
-  def destroy
-  end
-
   private
-
-  # Use callbacks to share common setup or constraints between actions.
-  def set_category
-    @category = Category.find(params[:id])
-  end
 
   # Only allow a list of trusted parameters through.
   def category_params

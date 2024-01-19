@@ -1,10 +1,9 @@
 class ExpensesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_expense, only: %i[show edit update destroy]
 
   def index
     @category = Category.find(params[:category_id])
-    @expenses = @category.expenses
+    @expenses = @category.expenses.order(created_at: :desc)
   end
 
   def new
@@ -22,28 +21,8 @@ class ExpensesController < ApplicationController
     end
   end
 
-  def show
-
-  end
-
-  def edit
-
-  end
-
-  def update
-
-  end
-
-  def destroy
-
-  end
 
   private
-
-  # Use callbacks to share common setup or constraints between actions.
-  def set_expense
-    @expense = Expense.find(params[:id])
-  end
 
   # Only allow a list of trusted parameters through.
   def expense_params
