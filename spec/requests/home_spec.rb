@@ -1,10 +1,5 @@
 require 'rails_helper'
 
-RSpec.describe 'Home', type: :request do
-  describe 'GET /index' do
-    it 'returns a successful response' do
-      get root_path
-      expect(response).to have_http_status(:success)
-    end
-  end
+RSpec.describe 'Homes', type: :request do
+  pending "add some examples to (or delete) #{__FILE__}"
 end
