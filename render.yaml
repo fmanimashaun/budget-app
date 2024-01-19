@@ -1,7 +1,7 @@
 databases:
-  - name: budget_app
-    databaseName: budget_app
-    user: budget_app_user
+  - name: Budgetti_database
+    databaseName: Budgetti_database
+    user: budgetti_user
     plan: free
 
 services:
@@ -11,11 +11,11 @@ services:
     plan: free
     buildCommand: "./bin/render-build.sh"
     # preDeployCommand: "./bin/rails db:migrate" # preDeployCommand only available on paid instance types
-    startCommand: "./bin/dev"
+    startCommand: "./bin/rails server"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: budget_app
+          name: Budgetti_app
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
