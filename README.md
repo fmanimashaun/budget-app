@@ -79,6 +79,10 @@ The **Budget App - Budgetti** is a comprehensive solution for managing personal 
 
 <img src="screenshots/splash-screen.png" alt="public index without login" width="500"/>
 
+### LIVE DEMO <a name="live-demo">
+
+> [LIVE Link](https://budget-app-gsnk.onrender.com/)
+
 
 <p align="right"><a href="#readme-top">👆</a></p>
 
