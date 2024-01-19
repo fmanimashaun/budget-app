@@ -6,7 +6,7 @@
       <button id="menu-btn">
         <%= image_tag 'menu.svg', alt: 'back arrow' %>
       </button>
-      <h2 class="text-white">CATEGORY</h2>
+      <h2 class="text-white">CATEGORIES</h2>
       <%= link_to 'javascript:history.back()', class: "text-white" do %>
         <%= image_tag 'search.svg', alt: 'back arrow' %>
       <% end %>
@@ -15,7 +15,7 @@
     <div class="flex flex-col p-5 gap-2">
       <% @categories.each do |category| %>
         <div class="w-full">
-          <%= link_to category_path(category) do %>
+          <%= link_to category_expenses_path(category) do %>
             <div
               class="flex gap-2 items-center bg-white rounded-lg shadow-lg p-2"
             >

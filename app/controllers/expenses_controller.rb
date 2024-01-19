@@ -3,6 +3,8 @@ class ExpensesController < ApplicationController
   before_action :set_expense, only: %i[show edit update destroy]
 
   def index
+    @category = Category.find(params[:category_id])
+    @expenses = @category.expenses
   end
 
   def new

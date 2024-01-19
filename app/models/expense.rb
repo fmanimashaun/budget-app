@@ -5,4 +5,11 @@ class Expense < ApplicationRecord
 
   validates :name, presence: true
   validates :amount, presence: true, numericality: { greater_than: 0 }
+  validate :categories_not_select
+
+  def categories_not_select
+    return unless categories.any? { |category| category.name == 'Select at least one category' }
+
+    errors.add(:categories, 'cannot contain "Select at least one category"')
+  end
 end
