@@ -9,6 +9,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      width: {
+        '100': '100%',
+      },
+      spacing: {
+        '70': '70px',
+      },
       minHeight: {
         'screen': '100vh',
       },
