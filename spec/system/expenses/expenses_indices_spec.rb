@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe 'Expense Index', type: :system do
+  include ActionView::Helpers::NumberHelper
+
   let(:user) { create(:user) }
   let(:category) { create(:category, user: user) }
   let!(:expenses) { create_list(:expense, 3, user: user, categories: [category]) }
@@ -9,12 +11,12 @@ RSpec.describe 'Expense Index', type: :system do
     driven_by(:rack_test)
     sign_in user
     visit categories_path
-    click_on category.name
+    find_link(category.name).click
   end
 
   it 'displays the category name and total transactions' do
     expect(page).to have_content(category.name)
-    expect(page).to have_content(number_to_currency(expenses.sum(:amount)))
+    expect(page).to have_content(number_to_currency(expenses.map(&:amount).sum))
   end
 
   it 'displays each expense' do
