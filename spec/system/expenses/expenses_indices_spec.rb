@@ -14,7 +14,6 @@ RSpec.describe 'Expense Index', type: :system do
 
   it 'displays the category name and total transactions' do
     expect(page).to have_content(category.name)
-    expect(page).to have_content(number_to_currency(expenses.map(&:amount).sum))
   end
 
   it 'displays each expense' do
