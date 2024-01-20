@@ -1,7 +1,13 @@
+require 'faker'
+
 FactoryBot.define do
   factory :expense do
-    name { 'MyString' }
-    amount { '9.99' }
-    user { nil }
+    association :user
+    name { Faker::Lorem.word }
+    amount { Faker::Number.decimal(l_digits: 2) }
+
+    after(:create) do |expense|
+      create_list(:category_expense, 3, expense: expense)
+    end
   end
 end

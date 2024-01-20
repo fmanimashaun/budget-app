@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :category_expense do
-    category { nil }
-    expense { nil }
+    association :category
+    association :expense
   end
 end
