@@ -38,7 +38,7 @@ RSpec.describe 'Categories', type: :system do
     it 'creates a new category' do
       visit new_category_path
       fill_in 'Name', with: 'Test Category'
-      attach_file('category[icon]', "#{Rails.root}spec/support/assets/test-image.png")
+      attach_file('category[icon]', "#{Rails.root}/spec/support/assets/test-image.png")
       click_on 'Add'
       expect(page).to have_content('Category was successfully created.')
       expect(page).to have_content('Test Category')
