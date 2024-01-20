@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'Expense Index', type: :system do
   let(:user) { create(:user) }
-  let(:category) { create(:category, user: user) }
-  let!(:expenses) { create_list(:expense, 3, user: user, categories: [category]) }
+  let(:category) { create(:category, user:) }
+  let!(:expenses) { create_list(:expense, 3, user:, categories: [category]) }
 
   before do
     driven_by(:rack_test)
