@@ -82,6 +82,7 @@ The **Budget App - Budgetti** is a comprehensive solution for managing personal 
 ### LIVE DEMO <a name="live-demo">
 
 > [LIVE Link](https://budget-app-gsnk.onrender.com/)
+> [Video demo]()
 
 
 <p align="right"><a href="#readme-top">👆</a></p>
@@ -110,6 +111,8 @@ git clone https://github.com/fmanimashaun/budget-app.git
 cd budget-app
 
 bundle install
+
+npm install
 ```
 
 ## Database Setup
@@ -191,7 +194,9 @@ If you like this project leave a start for it.
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I'd like to thank Microverse for helping us in the journey to become a Fullstack developer.
+- I'd like to thank Microverse for helping us in the journey to become a Fullstack developer.
+
+- Special appreciation [Gregoire Vella on Behance](https://www.behance.net/gregoirevella) for the Original design idea 
 
 <p align="right"><a href="#readme-top">👆</a></p>
 
