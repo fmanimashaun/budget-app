@@ -37,6 +37,9 @@ RSpec.configure do |config|
     Rails.root.join('spec/fixtures')
   ]
 
+  # number helper
+  config.include ActionView::Helpers::NumberHelper
+
   # FactoryBot
   config.include FactoryBot::Syntax::Methods
 
