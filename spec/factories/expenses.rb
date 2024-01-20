@@ -6,7 +6,8 @@ FactoryBot.define do
 
     after(:create) do |expense, evaluator|
       unless evaluator.skip_create_category_expenses
-        create_list(:category_expense, 3, expense: expense, category: create(:category, skip_create_category_expenses: true))
+        create_list(:category_expense, 3, expense:,
+                                          category: create(:category, skip_create_category_expenses: true))
       end
     end
 

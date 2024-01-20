@@ -9,21 +9,20 @@ RSpec.describe CategoriesController, type: :request do
   end
 
   describe 'GET #index' do
-  it 'assigns @categories' do
-    category
-    get categories_path
-    expect(assigns(:categories)).to eq([category])
-  end
+    it 'assigns @categories' do
+      category
+      get categories_path
+      expect(assigns(:categories)).to eq([category])
+    end
 
-  it 'calculates @total_spent' do
-    expense = create(:expense, user: user)
-    create(:category_expense, category: category, expense: expense)
-    total_spent = category.expenses.sum(:amount)
-    get categories_path
-    expect(assigns(:total_spent)).to eq(total_spent)
+    it 'calculates @total_spent' do
+      expense = create(:expense, user:)
+      create(:category_expense, category:, expense:)
+      total_spent = category.expenses.sum(:amount)
+      get categories_path
+      expect(assigns(:total_spent)).to eq(total_spent)
+    end
   end
-
-end
 
   describe 'GET #new' do
     it 'assigns a new Category to @category' do

@@ -5,9 +5,7 @@ FactoryBot.define do
     icon { Rack::Test::UploadedFile.new(Rails.root.join('spec', 'support', 'assets', 'test-image.png'), 'image/png') }
 
     after(:create) do |category, evaluator|
-      unless evaluator.skip_create_category_expenses
-        create_list(:category_expense, 3, category: category)
-      end
+      create_list(:category_expense, 3, category:) unless evaluator.skip_create_category_expenses
     end
 
     transient do
