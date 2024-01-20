@@ -1,13 +1,17 @@
-require 'faker'
-
 FactoryBot.define do
   factory :category do
     association :user
     name { Faker::Lorem.word }
-    icon { fixture_file_upload(Rails.root.join('spec', 'support', 'assets', 'test-image.jpg'), 'image/jpeg') }
+    icon { Rack::Test::UploadedFile.new(Rails.root.join('spec', 'support', 'assets', 'test-image.png'), 'image/png') }
 
-    after(:create) do |category|
-      create_list(:category_expense, 3, category: category)
+    after(:create) do |category, evaluator|
+      unless evaluator.skip_create_category_expenses
+        create_list(:category_expense, 3, category: category)
+      end
+    end
+
+    transient do
+      skip_create_category_expenses { false }
     end
   end
 end
