@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'Expenses', type: :system do
   let(:user) { create(:user) }
-  let(:category) { create(:category, user:) }
-  let!(:expenses) { create_list(:expense, 3, category:, user:) }
+  let(:category) { create(:category, user: user) }
+  let!(:expenses) { create_list(:expense, 3, category: category, user: user) }
 
   before do
     driven_by(:rack_test)
@@ -16,7 +16,7 @@ RSpec.describe 'Expenses', type: :system do
       expenses.each do |expense|
         expect(page).to have_content(expense.name)
         expect(page).to have_content(number_to_currency(expense.amount))
-        expect(page).to have_content(expense.updated_at.strftime('%d %b %Y'))
+        expect(page).to have_content(expense.created_at.strftime('%d %b %Y'))
       end
     end
 
@@ -28,10 +28,11 @@ RSpec.describe 'Expenses', type: :system do
   end
 
   describe 'new view' do
-    it 'creates a new expense' do
-      visit new_category_expense_path(category)
+    it 'creates a new expense with a category and redirects to categories path' do
+      visit category_expenses_path(category)
+      click_on 'ADD TRANSACTION'
       fill_in 'Name', with: 'Test Expense'
-      fill_in 'Amount', with: 50
+      fill_in 'Amount', with: 50.00
       select category.name, from: 'category_ids[]'
       click_on 'Add'
       expect(page).to have_content('Expense was successfully created.')
