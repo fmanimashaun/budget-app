@@ -2,7 +2,7 @@ class ExpensesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @category = Category.find(params[:category_id])
+    @category = current_user.categories.find(params[:category_id])
     @expenses = @category.expenses.order(created_at: :desc)
   end
 
