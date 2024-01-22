@@ -42,10 +42,7 @@ gem 'tzinfo-data', platforms: %i[windows jruby]
 gem 'bootsnap', require: false
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem "image_processing", "~> 1.2"
-
-# authorization
-gem 'cancancan'
+# gem 'image_processing', '~> 1.2'
 
 # add devise for authentication
 gem 'devise'

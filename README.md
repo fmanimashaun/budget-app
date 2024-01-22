@@ -1,4 +1,4 @@
-# Budget App
+# Budget App - Budgetti
 
 <a name="readme-top"></a>
 
@@ -24,9 +24,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-## 📖 Budget App <a name="about-project"></a>
+## 📖 Budget App - Budgetti <a name="about-project"></a>
 
-The **Budget App** is a comprehensive solution for managing personal finances, designed using Ruby on Rails with a PostgreSQL database. This fully functional application allows users to create categories, track transactions, and get an overview of their spending. An important feature of the app is its ability to associate transactions with categories, enabling users to understand their spending habits better. This promotes responsible financial management, which is a vital part of personal finance. The Budget App is not just an application, but a financial companion that enhances the budgeting experience by organizing and simplifying the process
+The **Budget App - Budgetti** is a comprehensive solution for managing personal finances, designed using Ruby on Rails with a PostgreSQL database. This fully functional application allows users to create categories, track transactions, and get an overview of their spending. An important feature of the app is its ability to associate transactions with categories, enabling users to understand their spending habits better. This promotes responsible financial management, which is a vital part of personal finance. The Budget App is not just an application, but a financial companion that enhances the budgeting experience by organizing and simplifying the process
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -77,7 +77,12 @@ The **Budget App** is a comprehensive solution for managing personal finances, d
 
 ### Screenshots <a name="key-features"></a>
 
-<img src="#" alt="public index without login" width="500"/>
+<img src="screenshots/splash-screen.png" alt="public index without login" width="500"/>
+
+### LIVE DEMO <a name="live-demo">
+
+> [LIVE Link](https://budget-app-gsnk.onrender.com/)
+> [Video demo](https://www.loom.com/share/d45038fec4da479a850a62cc4929b4e7?sid=442ca8e7-66da-458b-9421-e4dcabeede23)
 
 
 <p align="right"><a href="#readme-top">👆</a></p>
@@ -106,6 +111,8 @@ git clone https://github.com/fmanimashaun/budget-app.git
 cd budget-app
 
 bundle install
+
+npm install
 ```
 
 ## Database Setup
@@ -187,7 +194,9 @@ If you like this project leave a start for it.
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I'd like to thank Microverse for helping us in the journey to become a Fullstack developer.
+- I'd like to thank Microverse for helping us in the journey to become a Fullstack developer.
+
+- Special appreciation [Gregoire Vella on Behance](https://www.behance.net/gregoirevella) for the Original design idea 
 
 <p align="right"><a href="#readme-top">👆</a></p>
 
